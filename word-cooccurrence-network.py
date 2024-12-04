@@ -1,4 +1,3 @@
-from enum import Enum
 import re
 import itertools
 from collections import Counter
