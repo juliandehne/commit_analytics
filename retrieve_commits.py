@@ -5,7 +5,6 @@ import json
 
 # https://api.github.com/search/commits?q=author:schochastics+committer-date:%3E=2022-03-01&sort=author-date&&order=asc&page=1
 
-
 def search_commits(username: str, date_range: str, page: int = 1) -> list[dict]:
     results = []
     api = "https://api.github.com/search/commits"

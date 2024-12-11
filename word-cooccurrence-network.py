@@ -50,7 +50,12 @@ G.remove_nodes_from(nodes_to_remove)
 node_sizes = [G.degree(node) * 100 for node in G.nodes()]
 
 # GESIS colors (from website)
-colors = {"purple": (0.39, 0.16, 0.47), "darkblue": (0, 0.23, 0.47)}
+colors = {
+    "purple": (0.39, 0.16, 0.47),
+    "darkblue": (0, 0.23, 0.47),
+    "blue": (0.05, 0.43, 0.99),
+    "lightblue": (0.3, 0.61, 0.79)
+}
 
 # Visualize the network
 plt.figure(figsize=(12, 8))
@@ -59,16 +64,13 @@ nx.draw(
     G,
     pos,
     with_labels=True,
-    node_color=colors["darkblue"],
+    node_color=colors["lightblue"],
     node_size=node_sizes,
-    font_size=10,
-    edgecolors="gray",
-    font_color="whitesmoke",
-    edge_color="whitesmoke",
+    font_size=12,
+    font_color="black",
+    edge_color=(0.0, 0.23, 0.47, 0.5),
 )
 
-
-# nx.draw_networkx(G, pos)
 plt.title("Word Co-occurrence Network")
 # plt.show()
-plt.savefig("commits_words_coocurrence.pdf", facecolor="black", transparent=True)
+plt.savefig("commits_words_coocurrence.pdf", facecolor="white", transparent=True)
